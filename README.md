@@ -1,9 +1,9 @@
-# Knight Apps Sapper Webpack Template
+# Knight Apps Sapper with Auth0 Webpack Template
 
 ## Getting Started
 
 1. Get the template
-    `npx degit "KnightWebnApps/sapper-webpack-template" my-app`
+    `npx degit "KnightWebnApps/sapper-webpack-auth0-template" my-app`
 
 2. Install modules
    `npm i`
@@ -12,26 +12,6 @@
     `npm run dev`
 
 ### Features: Basic UI Library, Global CSS Custom Properties and 🔥 Default Styling
-
-- [X] Button
-- [X] Icon Button
-- [X] Link
-- [X] Text Field
-- [X] Checkbox Field
-- [ ] Numeric Field
-- [ ] Select Field
-- [ ] Slider
-- [ ] Switch
-- [X] List View
-- [X] Grid View
-- [X] Sidebar View
-- [X] Card
-- [X] Center
-- [X] Error
-- [ ] Chips
-- [ ] Tables
-- [ ] Dialog
-- [ ] Snackbar
   
 ## Structure
 
