@@ -1,5 +1,4 @@
 import { writable } from "svelte/store";
-import createAuth0Client from "@auth0/auth0-spa-js";
 import { Auth0Client } from '@auth0/auth0-spa-js';
 
 const dev = process.env.NODE_ENV === 'development';
@@ -9,7 +8,8 @@ const redirectUri = dev ? 'http://localhost:3000/callback' : '';
 const auth0 = new Auth0Client({
   domain: 'dev-knighted.auth0.com',
   client_id: 'BbmBAtUczZ51WiuJCsF7E61mdIe03tDZ',
-  redirect_uri: redirectUri
+  redirect_uri: redirectUri,
+  cacheLocation: 'localstorage'
 });
 
 
@@ -30,11 +30,6 @@ function createAuthStore() {
     subscribe,
     handleRedirectCallback: async (search) => {
       let newAppState;
-      // const auth0 = await createAuth0Client({
-      //   domain: 'dev-knighted.auth0.com',
-      //   client_id: 'BbmBAtUczZ51WiuJCsF7E61mdIe03tDZ',
-      //   redirect_uri: redirectUri
-      // });
       const query = search;
       if (query.includes("code=") && query.includes("state=")) {
         const { appState } = await auth0.handleRedirectCallback();

@@ -1,7 +1,7 @@
 <script>
   import IconButton from "../widgets/IconButton.svelte";
   import Button from "../widgets/Button.svelte";
-	import { authStore } from '../stores/auth0'
+  import { authStore } from "../stores/auth0";
 </script>
 
 <svelte:head>

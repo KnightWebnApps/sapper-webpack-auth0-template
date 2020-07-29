@@ -3,7 +3,8 @@
 </svelte:head>
 
 <script context="module">
-  export function preload(page) {
+  export function preload(page, session) {
+    console.log(page.params)
     const id = page.params.id;
     console.log(id);
     return { id };
