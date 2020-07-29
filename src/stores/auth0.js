@@ -3,7 +3,7 @@ import { Auth0Client } from '@auth0/auth0-spa-js';
 
 const dev = process.env.NODE_ENV === 'development';
 
-const redirectUri = dev ? 'http://localhost:3000/callback' : '';
+const redirectUri = dev ? 'http://localhost:3000/callback' : 'https://test-auth0-sapper.onrender.com/callback';
 
 const auth0 = new Auth0Client({
   domain: 'dev-knighted.auth0.com',
