@@ -48,11 +48,6 @@ function createAuthStore() {
     loginWithRedirect: async (...p) => {
       update(state => (state = { ...state, loading: true }));
       try {
-        // const auth0 = await createAuth0Client({
-        //   domain: 'dev-knighted.auth0.com',
-        //   client_id: 'BbmBAtUczZ51WiuJCsF7E61mdIe03tDZ',
-        //   redirect_uri: redirectUri
-        // });
         update(state => (state = { ...state, loading: false }));
         return auth0.loginWithRedirect(...p)
       } catch (e) {
@@ -64,11 +59,6 @@ function createAuthStore() {
     logout: async (origin) => {
       update(state => (state = { ...state, loading: true }));
       try {
-        // const auth0 = await createAuth0Client({
-        //   domain: 'dev-knighted.auth0.com',
-        //   client_id: 'BbmBAtUczZ51WiuJCsF7E61mdIe03tDZ',
-        //   redirect_uri: redirectUri
-        // });
         update(state => (state = { ...state, isAuthenticated: false, loading: false }));
         await auth0.logout({
           returnTo: origin

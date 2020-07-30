@@ -1,12 +1,18 @@
 <script>
   import { authStore } from "../stores/auth0";
   import Button from "../widgets/Button.svelte";
+  import { goto } from '@sapper/app';
 
   export let segment;
+  
+  async function getUserSession() {
+    goto('/callback')
+  }
 
   async function login() {
     await authStore.loginWithRedirect();
   }
+
   async function logout() {
     await authStore.logout(window.location.origin);
   }
@@ -67,6 +73,7 @@
 
 	[aria-current] {
 		background-color: var(--gray);
+    border-radius: var(--border-radius);
 	}
 
 	li {

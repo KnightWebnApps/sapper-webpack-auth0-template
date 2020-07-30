@@ -4,7 +4,9 @@
   import { authStore } from "../../stores/auth0";
   onMount(async () => {
     try {
+      
       await authStore.handleRedirectCallback(window.location.search);
+      
     } catch (e) {
       alert("Something happened. Please try again.");
     }
